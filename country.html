@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Manage Countries</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div id="countrynotifications"></div>
+        <table class="table table-sm table-striped table-hover" id="countriestable">
+            <thead>
+                <th>#</th>
+                <th>Country</th>
+                <th>Cities</th>
+                <th>Airports</th>
+                <th>Airlines</th>
+                <th></th> <!--editing the country -->
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- add a button for saving the country -->
+        <button class="btn btn-sm btn-success" id="addnewcountry"><i class="fas fa-plus"></i> Add New Country</button>
+    </div>
+
+    <!-- add a modal for country details -->
+<div class="modal fade" tabindex="-1" role="dialog" id="countrydetailsmodal" aria-labelledby="countrydetailsmodalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="countrydetailsmodalLabel">Country Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="notifications"></div>
+                <input type="hidden" name="countryname" id="countryid" value="0">
+                <div class="form-group">
+                    <label for="countryname">Country Name</label>
+                    <input type="text" class="form-control form-control-sm" name="countryname" id="countryname" placeholder="Enter country name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" id="savecountry"><i class="fas fa-save fa-lg"></i> Save changes</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal"><i class="fas fa-times fa-lg"></i> Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="javascript/jquery-3.7.1.js"></script>
+<script src="javascript/bootstrap.min.js"></script>
+<script src="javascript/country.js"></script>
+
+</html>
