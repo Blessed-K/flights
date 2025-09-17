@@ -106,7 +106,7 @@ CREATE TABLE `city` (
   PRIMARY KEY (`cityid`),
   KEY `countryid` (`countryid`),
   CONSTRAINT `city_ibfk_1` FOREIGN KEY (`countryid`) REFERENCES `country` (`countryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `city` */
 
@@ -115,7 +115,8 @@ insert  into `city`(`cityid`,`cityname`,`countryid`) values
 (3,'Nairobi',1),
 (4,'Dodoma',3),
 (5,'Kampala',4),
-(6,'Kisumu',1);
+(6,'Kisumu',1),
+(8,'Mombasa',1);
 
 /*Table structure for table `country` */
 
@@ -125,7 +126,7 @@ CREATE TABLE `country` (
   `countryid` int(11) NOT NULL AUTO_INCREMENT,
   `countryname` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`countryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `country` */
 
@@ -133,7 +134,11 @@ insert  into `country`(`countryid`,`countryname`) values
 (1,'Kenya'),
 (2,'Rwanda'),
 (3,'Tanzania'),
-(4,'Uganda');
+(4,'Uganda'),
+(6,'Burundi'),
+(7,'China'),
+(8,'Jamaica'),
+(9,'Yemen');
 
 /*Table structure for table `currency` */
 
@@ -262,6 +267,20 @@ insert  into `paymentmethod`(`paymentmethodid`,`methodname`) values
 (3,'Mastercard'),
 (4,'PayPall'),
 (5,'Points');
+
+/* Procedure structure for procedure `sp_checkcity` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sp_checkcity` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_checkcity`($cityid int , $cityname varchar(255), $countryid int)
+BEGIN
+	
+	 SELECT * FROM `city` WHERE `cityname` = $cityname AND `countryid` = $countryid AND `cityid` != $cityid;
+
+	END */$$
+DELIMITER ;
 
 /* Procedure structure for procedure `sp_checkcountry` */
 

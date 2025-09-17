@@ -64,7 +64,7 @@ $(document).ready(function() {
         $.getJSON(
             "http://localhost/flights/controllers/countryoperations.php",
             {
-                getcountry:true
+                getcountries:true
             }
         ).done(function(data){
             let results = ""
