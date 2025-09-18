@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Users Manager</title>
+</head>
+<body>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <!-- left hand side-->
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>Existing Users</h5>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="existingusers">Select a User</label>
+                        <select name="existingusers" id="existingusers" class="form-control form-control-sm"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- right hand side and privileges -->
+        <div class="col-md-8">
+            <!-- User Details Card -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>User Details</h5>
+                </div>
+                <div class="card-body">
+                    <form id="usersdetails">
+                        <div class="row mb-3">
+                            <div class="col-md-4 form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="username" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="firstname">Firstname</label>
+                                <input type="text" name="firstname" id="firstname" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="lastname">Lastname</label>
+                                <input type="text" name="lastname" id="lastname" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4 form-group">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="confirmpassword">Confirm Password</label>
+                                <input type="password" name="confirmpassword" id="confirmpassword" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-4 form-group">
+                                <label for="changepasswordonlogin">Change Password on Login</label>
+                                <select name="changepasswordonlogin" id="changepasswordonlogin" class="form-control form-control-sm">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 form-group">
+                                <label for="mobile">Mobile</label>
+                                <input type="text" name="mobile" id="mobile" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- User Privileges Card -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5>User Privileges</h5>
+                </div>
+                <div class="card-body p-2">
+                    <div id="userpriviledges">
+                        <table class="table table-borderless mb-0">
+                            <!-- Privileges content goes here -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="mb-3">
+                <button type="button" class="btn btn-success btn-sm" id="saveuser">
+                    <i class="fas fa-save fa-lg"></i> Save User
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm" id="clearfields">
+                    <i class="fas fa-trash fa-lg"></i> Clear
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="javascript/jquery-3.7.1.js"></script>
+<script src="javascript/bootstrap.min.js"></script>
+<script src="javascript/usersmanager.js"></script>
+</html>
