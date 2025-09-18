@@ -64,8 +64,6 @@ $(document).ready(function(){
                     <td>${idx + 1}</td>
                     <td>${city.countryname}</td>
                     <td>${city.cityname}</td>
-                    <td>${city.airports || ''}</td>
-                    <td>${city.airlines || ''}</td>
                     <td>
                         <!-- Edit/Delete buttons here if needed -->
                     </td>

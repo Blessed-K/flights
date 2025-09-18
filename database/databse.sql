@@ -106,7 +106,7 @@ CREATE TABLE `city` (
   PRIMARY KEY (`cityid`),
   KEY `countryid` (`countryid`),
   CONSTRAINT `city_ibfk_1` FOREIGN KEY (`countryid`) REFERENCES `country` (`countryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `city` */
 
@@ -116,7 +116,8 @@ insert  into `city`(`cityid`,`cityname`,`countryid`) values
 (4,'Dodoma',3),
 (5,'Kampala',4),
 (6,'Kisumu',1),
-(8,'Mombasa',1);
+(8,'Mombasa',1),
+(9,'Jinja',4);
 
 /*Table structure for table `country` */
 
@@ -636,10 +637,14 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_getcity`()
 BEGIN
-              SELECT * FROM `city`
-	order by `cityname`;
-
-	END */$$
+    SELECT 
+        c.cityid,
+        c.cityname,
+        co.countryname
+    FROM `city` c
+    JOIN `country` co ON c.countryid = co.countryid
+    ORDER BY c.cityname;
+END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `sp_getcitybyid` */

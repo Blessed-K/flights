@@ -23,7 +23,7 @@ class city extends db{
         ];
     }
     function getcity(){
-        $sql="CALL `sp_getcities`()";
+        $sql="CALL `sp_getcity`()";
         return $this->getJSON($sql);
 
     }
