@@ -32,5 +32,10 @@
 
     }
 
+    function getobjects(){
+        $sql="call `sp_getobjects`()";
+        return $this->getJSON($sql);
+    }
+
  }
 ?>

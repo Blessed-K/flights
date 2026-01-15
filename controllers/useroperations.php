@@ -29,4 +29,8 @@ if(isset($_GET['getuserdetails'])){
     $userid=$_GET['userid'];
     echo $user->getuserdetails($userid);
 }
+
+if(isset($_GET['getobjects'])){
+    echo $user->getobjects();
+}
 ?>
