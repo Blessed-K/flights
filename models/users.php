@@ -18,8 +18,8 @@
                 $sql="CALL`sp_saveuser`({$userid}, '{$username}', '{$firstname}', '{$lastname}', '{$userpassword}' ,
                 '{$salt}' , '{$mobile}', '{$email}', {$systemadmin}, {$addedby})";
                 //echo $sql.PHP_EOL;
-                $this ->getData($sql);
-                return ["status"=>"success","message"=>"User saved successfully"];
+                $rst=$this ->getData($sql);
+                return ["status"=>"success","message"=>"User saved successfully","userid"=>$rst['userid']];
     }
 }
     function getusers(){

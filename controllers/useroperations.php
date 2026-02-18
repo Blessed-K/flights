@@ -18,6 +18,10 @@ if(isset($_POST['saveuser'])){
 
     $response=$user->saveuser($userid, $username, $firstname, $lastname, $userpassword ,
     $salt , $mobile, $email, $systemadmin);
+    $userid=$response['userid'];
+    $useprivileges=json_decode(stripcslashes($_POST['userprivileges']),true);
+    //save user privileges
+
     echo json_encode($response);
 }
 
